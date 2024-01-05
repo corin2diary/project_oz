@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>로그인 / 회원가입 폼 템플릿</title>
+        <link rel="stylesheet" href=" {{ url_for('static', filename='css/boostrap_admin2.css') }}">
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="form-wrap">
+                <div class="button-wrap">
+                    <div id="btn"></div>
+                    <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
+                    <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/corin2diary"></a>
+                    <img src="https://foundations.projectpythia.org/_images/GitHub-logo.png" alt="github" style="width: 80px; height: auto;">
+                </div>
+                <form id="login" action="/login"  method="post" class="input-group">
+                    <input type="id" class="input-field" placeholder="아이디를 입력해주세요" name="id" required>
+                    <input type="password" name="password"class="input-field" placeholder="비밀번호를 입력해주세요" required>
+                    <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                    <button class="submit">Login</button>
+                </form>
+                <form id="register" action="/register" method="post" class="input-group">
+                    <input type="name"  name="name" class="input-field" placeholder="이름을 입력해 주세요" required>
+                    <input type="id"  name="id" class="input-field" placeholder="아이디를 설정해 주세요" required>
+                    <input type="password" name="password" class="input-field" placeholder="비밀번호를 설정해 주세요" required>
+                    <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
+                    <button class="submit">REGISTER</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+        </script>
+    </body>
+</html> 

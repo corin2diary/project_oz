@@ -1,0 +1,24 @@
+<form id="register" action="{{ url_for('register') }}" class="input-group" method="POST">
+    <input type="name" name="name" class="input-field" placeholder="이름을 입력해 주세요" required>
+    <input type="id" name="id" class="input-field" placeholder="아이디를 설정해 주세요" required>
+    <input type="password" name="password" class="input-field" placeholder="비밀번호를 설정해 주세요" required>
+    <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
+    <button type="button" class="submit" onclick="submitRegisterForm()">REGISTER</button>
+</form>
+
+<script>
+    function submitRegisterForm() {
+        // 여기에서 AJAX 또는 Fetch API를 사용하여 서버에 회원가입 요청을 보낼 수 있습니다.
+        // 성공 여부에 따라 다음 페이지로 이동하도록 처리합니다.
+
+        // 아래는 간단한 예시로, 가입 성공 시 서버에서 응답으로 success: true를 받았다고 가정합니다.
+        const registerSuccess = submitRegisterForm();
+
+        if (registerSuccess = true) {
+            // 회원가입 성공 시 다음 페이지로 이동
+            window.location.href = '/success';
+        } else {
+            alert('회원가입 실패. 다시 시도하세요.');
+        }
+    }
+</script>
